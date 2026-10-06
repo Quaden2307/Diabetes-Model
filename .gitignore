@@ -1,0 +1,29 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Saved model weights / checkpoints
+*.pt
+*.pth
+checkpoints/
+
+# ONNX exports (resnet/export_onnx.py)
+*.onnx
+
+# Plots / outputs
+*.png
+runs/
+
+# Generated data — uncomment if you'd rather regenerate via build_splits.py
+# data/diabetes_splits.csv

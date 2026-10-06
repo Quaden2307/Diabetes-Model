@@ -1,0 +1,13 @@
+torch
+torchvision
+numpy
+pillow
+matplotlib
+scikit-learn
+pandas
+pathlib
+
+# ONNX export and verification (resnet/export_onnx.py)
+onnx
+onnxscript
+onnxruntime
