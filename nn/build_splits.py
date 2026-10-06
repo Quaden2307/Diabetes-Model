@@ -1,9 +1,5 @@
 import pandas as pd
-import numpy as np
-import torch as torch
-import csv
 from pathlib import Path
-from data.dataset import Dataset
 
 DATA_DIR = Path('data/diabetes.csv')
 
@@ -17,13 +13,7 @@ n_test = n - n_train - n_val
 
 df["split"] = ["train"] * n_train + ["val"] * n_val + ["test"] * n_test
 
-train = df["split" == "train"]
-val = df[df["split"] == "val"]
-test = df[df["split"] == "test"]
-
-
-
-print(train)
+df.to_csv("data/diabetes_splits.csv", index=False)
 
 
 

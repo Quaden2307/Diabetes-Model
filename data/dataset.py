@@ -1,6 +1,5 @@
 import torch
 import pandas as pd
-from pathlib import Path
 
 features = ['Pregnancies','Glucose','BloodPressure','SkinThickness',
             'Insulin','BMI','DiabetesPedigreeFunction','Age']
