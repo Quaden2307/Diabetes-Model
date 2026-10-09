@@ -17,9 +17,8 @@ class Model(nn.Module):
         self.layer1 = nn.Linear(input, hidden)
         self.relu = nn.ReLU()
         self.layer2 = nn.Linear(hidden, output)
-        
+
     def forward(self, x):
-        x = self.flatten(x)
         x = self.layer1(x)
         x = self.relu(x)
         x = self.layer2(x)
@@ -29,7 +28,7 @@ model = Model(input=8, hidden=16, output=2)
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 loss_fn = nn.CrossEntropyLoss()
 
-epochs = 10
+epochs = 100
 for epoch in range(epochs):
     model.train()
     for xb, yb in train_loader:
