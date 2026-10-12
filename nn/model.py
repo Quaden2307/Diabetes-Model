@@ -58,7 +58,7 @@ with torch.no_grad():
     for xb, yb in test_loader:
         preds = model(xb)
         loss = loss_fn(preds, yb)
-        test_loss += loss
+        test_loss += loss.item()
         test_correct += (preds.argmax(dim=1) == yb).sum().item()
 
 print(f"TEST: loss={test_loss / len(test_loader):.3f}, "
