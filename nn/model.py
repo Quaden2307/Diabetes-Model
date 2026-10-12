@@ -51,6 +51,20 @@ for epoch in range(epochs):
     print(f"epoch {epoch}: val_loss={val_loss/len(val_loader):.3f}, "
           f"val_acc={correct/len(val):.3f}")
 
+model.eval()
+test_correct = 0
+test_loss = 0
+with torch.no_grad():
+    for xb, yb in test_loader:
+        preds = model(xb)
+        loss = loss_fn(preds, yb)
+        test_loss += loss
+        test_correct += (preds.argmax(dim=1) == yb).sum().item()
+
+print(f"TEST: loss={test_loss / len(test_loader):.3f}, "
+      f"acc={test_correct/len(test):.3f}")
+
+
 
 
 
